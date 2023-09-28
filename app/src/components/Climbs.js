@@ -2,7 +2,7 @@ import React from 'react'
 
 const Climbs = () => {
   return (
-    <div>
+    <div className='main'>
       Climbs
     </div>
   )

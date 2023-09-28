@@ -1,36 +1,43 @@
-import { BrowserRouter, Routes, Route, Link, NavLink } from 'react-router-dom';
+import { 
+  createBrowserRouter, 
+  Route,  
+  NavLink, 
+  createRoutesFromElements,
+  RouterProvider
+} from 'react-router-dom';
 import Climbs from './components/Climbs';
 import Home from './components/Home'
 import Techniques from './components/Techniques'
+import RootLayout from './layout/RootLayout';
+import ClimbsLayout from './layout/ClimbsLayout';
+import Red from './components/grades/Red'
+import Orange from './components/grades/Orange'
+import Yellow from './components/grades/Yellow'
+import Green from './components/grades/Green'
 
-
-function App() {
-  return (
-    <BrowserRouter>
-      <header>
-
-        <nav>
-          <h1>Climber Bimber</h1>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="climbs">Climbs</NavLink>
-          <NavLink to="techniques">Techniques</NavLink>
-        </nav>
-      
-      </header>
-      <main>
-
-        <Routes>
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<RootLayout/>}>
 
           <Route index element={<Home />}/>
 
-          <Route path="climbs" element={<Climbs />}/>
+          <Route path="climbs" element={<ClimbsLayout/>}>
+            <Route path="red" element={<Red/>}/>
+            <Route path="orange" element={<Orange/>}/>
+            <Route path="yellow" element={<Yellow/>}/>
+            <Route path="green" element={<Green/>}/>
+          </Route>
 
           <Route path="techniques" element={<Techniques />}/>
 
-        </Routes>
+    </Route>
+  )
+)
 
-      </main>
-    </BrowserRouter>
+function App() {
+  return (
+
+      <RouterProvider router={router}/>
   )
 }
 

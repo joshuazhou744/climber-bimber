@@ -2,7 +2,7 @@ import React from 'react'
 
 const Techniques = () => {
   return (
-    <div>
+    <div className='main'>
       Techniques
     </div>
   )
