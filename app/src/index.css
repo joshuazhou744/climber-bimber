@@ -4,15 +4,22 @@
   --primary: #E31C79;
   --secondary: #2b3452;
 }
+
 body {
   margin: 0;
   padding: 20px;
   font-family: "Poppins";
-  background: var(--secondary);
+  background: url('./images/background.png');
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 * {
   color: #fff;
   margin: 0;
+  padding: 0;
 }
 p {
   margin: 20px 0;
@@ -33,15 +40,20 @@ header nav {
   justify-content: end;
   max-width: 1200px;
   margin: 0 auto;
+  padding-bottom: 14px;
+  border-bottom: 3px solid white;
 }
 header nav h1 {
   margin-right: auto;
-  border-bottom: 3px solid var(--primary);
 }
 header nav a{
   text-decoration: none;
-  padding: 6px;
   border-radius: 4px;
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px;
 }
 header nav a.active {
   background: var(--primary);
