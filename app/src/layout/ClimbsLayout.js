@@ -1,10 +1,23 @@
 import { NavLink, Outlet } from 'react-router-dom'
 
 export default function ClimbsLayout() {
+
+  const climbs = [
+    {
+      grade: 'red',
+      date: '09/29',
+      link: 'https://www.youtube.com/watch?v=QjRFZWLl5-A',
+      name: 'name'
+    }
+  ]
+
   return (
     <div className="climbs-layout">
-      <h2>Climbs</h2>
-      <p>Select a Grade lil bro</p>
+
+      <div className="container">
+        <h2>Select a grade</h2>
+        <NavLink to="addclimb">Add Climb</NavLink>
+      </div>
 
       <nav>
         <NavLink to="red">Red</NavLink>

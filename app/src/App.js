@@ -1,11 +1,9 @@
 import { 
   createBrowserRouter, 
-  Route,  
-  NavLink, 
+  Route, 
   createRoutesFromElements,
   RouterProvider
 } from 'react-router-dom';
-import Climbs from './components/Climbs';
 import Home from './components/Home'
 import Techniques from './components/Techniques'
 import RootLayout from './layout/RootLayout';
@@ -14,6 +12,7 @@ import Red from './components/grades/Red'
 import Orange from './components/grades/Orange'
 import Yellow from './components/grades/Yellow'
 import Green from './components/grades/Green'
+import AddClimb from './AddClimb';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -22,6 +21,7 @@ const router = createBrowserRouter(
           <Route index element={<Home />}/>
 
           <Route path="climbs" element={<ClimbsLayout/>}>
+            <Route path="addclimb" element={<AddClimb/>}/>
             <Route path="red" element={<Red/>}/>
             <Route path="orange" element={<Orange/>}/>
             <Route path="yellow" element={<Yellow/>}/>
